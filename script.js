@@ -71,29 +71,7 @@ for (let i = 0; i<data.length; i++) {
     colapseDiv.className = "card card-body"
     gradedCol.appendChild(colapseDiv)
     infoRow.append(gradedCol)
-    
-    
-
-    
-
-        //     <div class="row">
-        // <div class="col">
-        //     <div class="collapse multi-collapse" id="multiCollapseExample1">
-            //     <div class="card card-body">
-            //         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            //     </div>
-        //     </div>
-        // </div>
-        // <div class="col">
-        //     <div class="collapse multi-collapse" id="multiCollapseExample2">
-        //     <div class="card card-body">
-        //         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        //     </div>
-        //     </div>
-        // </div>
-        // </div>
-
-    
+        
 
     title.className = "card-title"
     title.innerHTML = data[i]["class"]
@@ -122,9 +100,6 @@ for (let i = 0; i<data.length; i++) {
         
         // gradedDiv.id = "missingAssignments"
         colapseDiv.className = "card card-body"
-        
-        
-
         cardBody.appendChild(infoRow)
 
         // let text = document.createElement('h5')
