@@ -91,11 +91,11 @@ for (let i = 0; i<data.length; i++) {
     cardBody.appendChild(title)
     cardBody.appendChild(grade)
     
-    Object.entries(data[i]["test"]).forEach(([key, value]) => {
-        console.log(Object.keys(data[i]["test"][key])[0])
-        console.log(Object.values(value)[0])
-        console.log(Date(Object.values(value)[0]))
-    });
+    // Object.entries(data[i]["dates"]).forEach(([key, value]) => {
+    //     console.log(Object.keys(data[i]["dates"][key])[0])
+    //     console.log(Object.values(value)[0])
+    //     console.log(Date(Object.values(value)[0]))
+    // });
     
     
     if(data[i]["missing"] != null){
@@ -256,8 +256,8 @@ function appendPre(message) {
 function listUpcomingEvents() {
     
     for (let i = 0; i<data.length; i++) {
-        Object.entries(data[i]["test"]).forEach(([key, value]) => {
-            console.log(Object.keys(data[i]["test"][key])[0])
+        Object.entries(data[i]["dates"]).forEach(([key, value]) => {
+            console.log(Object.keys(data[i]["dates"][key])[0])
             console.log(Object.values(value)[0])
             var date = Date.parse(Object.values(value)[0])
             var dateEpoch = new Date(date)
@@ -267,9 +267,9 @@ function listUpcomingEvents() {
             var dateTime = year + "-" + month + "-" + day
             console.log(dateTime)
             var event = {
-                'summary': `${data[i]["class"]} - ${Object.keys(data[i]["test"][key])[0]}`,
+                'summary': `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`,
                 'location': '',
-                'description': `${Object.keys(data[i]["test"][key])[0]} due today`,
+                'description': `${Object.keys(data[i]["dates"][key])[0]} due today`,
                 'start': {
                     'dateTime': dateTime+'T22:00:00-07:00',
                     'timeZone': 'America/Los_Angeles'
@@ -315,14 +315,14 @@ function listUpcomingEvents() {
                         if (!when) {
                             when = event.start.date;
                         }
-                        if (event.summary == `${data[i]["class"]} - ${Object.keys(data[i]["test"][key])[0]}`) {
+                        if (event.summary == `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`) {
                             console.log("existe")
                             return
                         } 
                         //appendPre(event.summary + ' (' + when + ')')
                     }
                     request.execute(function(event) {
-                        appendPre('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["test"][key])[0]}`);
+                        appendPre('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
                     });
                 } else {
                     //appendPre('No upcoming events found.');
