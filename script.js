@@ -369,6 +369,7 @@ function listUpcomingEvents() {
                     }
                     request.execute(function(event) {
                         showToast('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
+                        console.log("added event")
                     });
                 } else {
                     //appendPre('No upcoming events found.');
