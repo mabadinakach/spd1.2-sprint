@@ -4,6 +4,23 @@ const itemsContainer = document.getElementById('items')
 
 window.onload = handleClientLoad()
 
+let divToast = document.createElement('div')
+divToast.setAttribute("aria-live", "polite");
+divToast.setAttribute("aria-atomic", "true");
+divToast.style.position = "relative"
+divToast.style.minHeight = "200px"
+
+let divToast2 = document.createElement('div')
+divToast2.id = "toastDiv"
+divToast2.style.position = "abosulte"
+divToast2.style.top = "0"
+divToast2.style.right = "0"
+
+divToast.append(divToast2)
+
+let body = document.getElementById('body')
+body.append(divToast)
+
 let container = document.createElement('div')
 container.className = "container"
 let row = document.createElement('div')
@@ -248,6 +265,35 @@ function appendPre(message) {
     pre.appendChild(textContent);
 }
 
+function showToast(message) {
+    var divToast = document.getElementById('toastDiv')
+    
+    let toast = document.createElement('div')
+    toast.className = "toast"
+    toast.setAttribute("role", "alert")
+    toast.setAttribute("aria-live", "assertive")
+    toast.setAttribute("aria-atomic", "true")
+
+    let toastHeader = document.createElement('div')
+    toastHeader.className = "toast-header"
+
+    let title = document.createElement('strong')
+    title.className = "mr-auto"
+    title.innerHTML = "Calendar"
+    let small = document.createElement('small')
+    small.className = "text-muted"
+    small.innerHTML = "just now"
+    let button = document.createElement('button')
+    button.type = "button"
+    button.className = "ml-2 mb-1 close"
+    button.setAttribute("data-dismiss","true")
+    button.setAttribute("aria-label","Close")
+
+    let body = document.createElement('div')
+    body.className = "toast-body"
+    body.innerHTML = message
+}
+
 /**
 * Print the summary and start datetime/date of the next ten events in
 * the authorized user's calendar. If no events are found an
@@ -322,7 +368,7 @@ function listUpcomingEvents() {
                         //appendPre(event.summary + ' (' + when + ')')
                     }
                     request.execute(function(event) {
-                        appendPre('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
+                        showToast('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
                     });
                 } else {
                     //appendPre('No upcoming events found.');
