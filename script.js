@@ -260,9 +260,14 @@ function handleSignoutClick(event) {
 * @param {string} message Text to be placed in pre element.
 */
 function appendPre(message) {
-    var pre = document.getElementById('content');
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
+    var pre = document.getElementById('alert-container');
+    var text = document.createElement('div')
+    text.className = "alert alert-success text-center"
+    text.style.width = "500px"
+    text.role = "alert"
+    text.innerHTML = message + '\n'
+    //var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(text);
 }
 
 function showToast(message) {
@@ -289,9 +294,19 @@ function showToast(message) {
     button.setAttribute("data-dismiss","true")
     button.setAttribute("aria-label","Close")
 
-    let body = document.createElement('div')
-    body.className = "toast-body"
-    body.innerHTML = message
+    toastHeader.append(title)
+    toastHeader.append(small)
+    toastHeader.append(button)
+
+    let bodyToast = document.createElement('div')
+    bodyToast.className = "toast-body"
+    bodyToast.innerHTML = message
+
+    toast.append(toastHeader)
+    toast.append(bodyToast)
+    
+
+    divToast2.append(toast)
 }
 
 /**
@@ -368,8 +383,9 @@ function listUpcomingEvents() {
                         //appendPre(event.summary + ' (' + when + ')')
                     }
                     request.execute(function(event) {
-                        showToast('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
+                        appendPre('Event added to calendar: ' + `${data[i]["class"]} - ${Object.keys(data[i]["dates"][key])[0]}`);
                         console.log("added event")
+                        //$('.toast').toast('show');
                     });
                 } else {
                     //appendPre('No upcoming events found.');

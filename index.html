@@ -19,7 +19,7 @@ background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 
         <!-- <button class="g-signin2" id="authorize_button" style="display: none; border: none;">Authorize</button>
         <button  id="signout_button" style="display: none; border: none;">Sign Out</button> -->
         
-        <pre id="content" style="white-space: pre-wrap;"></pre>
+        
         <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <button onclick="signOut()">Sign out</button> -->
         <!-- </nav> -->
@@ -96,12 +96,13 @@ background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 
         document.body.appendChild(createdStyleTag);
         </script>
     
-    <div class="container" style="background-color: white; border-radius: 10px; padding: 10px; width: 300px; margin-top: 10px;">
+    <div id="alert-container" class="container" style="background-color: white; border-radius: 10px; padding: 10px; max-width: 520px; margin-top: 10px;">
         <h1 class="text-center" style="color: black;">Classes</h1>
     </div>
     <br>
 
     <main class='items' id='items'>
+        <pre id="content" style="white-space: pre-wrap;"></pre>
     </main>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
