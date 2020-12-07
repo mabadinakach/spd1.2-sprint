@@ -11,7 +11,27 @@
 <body id="body" style="background: rgb(130,218,195);
 background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 58%, rgba(0,206,203,1) 96%);">
     <!-- Image and text -->
-    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Gradescope Tool</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/sign-in/index.html">Sign in</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     <!-- <nav class="navbar navbar-light bg-light"> -->
         <!-- <a class="navbar-brand" href="#">
             Gradescope Tool
@@ -50,7 +70,7 @@ background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 
             </div>
             <div class="container">
                 <h1 class="title display-3 text-center" style="font-weight:100;"><strong style="font-weight:600;">Gradescope</strong> Tool</h1>
-                <p class="lead string-1 text-center">A tool designed to help you manage your classes more effectively.</p>
+                <h3 class=" string-1 text-center">A tool designed to help you manage your classes more effectively.</h3>
                 <div class="arrow" style="position: absolute;
                 top: 50%;
                 left: 50%;
@@ -96,13 +116,59 @@ background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 
         document.body.appendChild(createdStyleTag);
         </script>
     
-    <div id="alert-container" class="container" style="background-color: white; border-radius: 10px; padding: 10px; max-width: 520px; margin-top: 10px;">
+    <!-- <div id="alert-container" class="container" style="background-color: white; border-radius: 10px; padding: 10px; max-width: 520px; margin-top: 10px;">
         <h1 class="text-center" style="color: black;">Classes</h1>
-    </div>
+    </div> -->
     <br>
 
     <main class='items' id='items'>
-        <pre id="content" style="white-space: pre-wrap;"></pre>
+        <div class="container" style="padding: 30px;">
+            <div class="card text-center">
+                <div class="card-body">
+                  <h3 class="card-title">Missing Assignments</h3>
+                  <h4 class="card-text">It is tedious to find all of your missing assignments from Gradescope. This tool will put them all in one single place</h4>
+                  
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Scores</h3>
+                      <h4 class="card-text">Get your up to date scores in all of your classes in one place.</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Google Calendar</h3>
+                      <h4 class="card-text">This tool will retrieve all your missing assignments and automatically add them to your Google Calendar</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="text-center">
+                <a href="/sign-in/index.html" class="btn btn-primary"><h2>Start</h2></a>
+              </div>
+              <br>
+              
+        </div>
+
+        <div class="container">
+            <blockquote class="blockquote text-right" style="background-color: white; border-radius: 10px; padding: 20px;">
+                <p class="mb-0">My productivity has increased a ton since I started using this tool.</p>
+                <footer class="blockquote-footer">John Doe</footer>
+              </blockquote>
+
+              <blockquote class="blockquote text-left" style="background-color: white; border-radius: 10px; padding: 20px;">
+                <p class="mb-0">Now I can keep track of my missing assignments effectively and let Google Calendar take care of reminding me abou them.</p>
+                <footer class="blockquote-footer">Chris M.</footer>
+              </blockquote>
+        </div>
+
     </main>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -204,7 +270,7 @@ background: radial-gradient(circle, rgba(130,218,195,1) 0%, rgba(127,169,189,1) 
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
-<script src='script.js' type="module"></script>
+<!-- <script src='script.js' type="module"></script> -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
